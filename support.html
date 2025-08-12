@@ -1,1 +1,487 @@
+  <!DOCTYPE html>
+  <html lang="zh-TW">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>換匯與記帳 - 旅行理財助手</title>
+      <style>
+          * {
+              margin: 0;
+              padding: 0;
+              box-sizing: border-box;
+          }
 
+          body {
+              font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+              line-height: 1.6;
+              color: #333;
+              background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+              min-height: 100vh;
+          }
+
+          .container {
+              max-width: 1200px;
+              margin: 0 auto;
+              padding: 20px;
+          }
+
+          header {
+              text-align: center;
+              color: white;
+              padding: 60px 0;
+          }
+
+          h1 {
+              font-size: 3rem;
+              margin-bottom: 10px;
+              text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+          }
+
+          .subtitle {
+              font-size: 1.2rem;
+              opacity: 0.9;
+              margin-bottom: 30px;
+          }
+
+          .app-icon {
+              width: 120px;
+              height: 120px;
+              background: #fff;
+              border-radius: 25px;
+              margin: 0 auto 30px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-size: 60px;
+              box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+          }
+
+          .main-content {
+              background: white;
+              border-radius: 20px;
+              padding: 40px;
+              margin: 40px 0;
+              box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+          }
+
+          .features {
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+              gap: 30px;
+              margin: 40px 0;
+          }
+
+          .feature {
+              text-align: center;
+              padding: 30px;
+              border-radius: 15px;
+              background: #f8f9fa;
+              transition: transform 0.3s ease;
+          }
+
+          .feature:hover {
+              transform: translateY(-5px);
+          }
+
+          .feature-icon {
+              font-size: 48px;
+              margin-bottom: 20px;
+          }
+
+          .feature h3 {
+              color: #667eea;
+              margin-bottom: 15px;
+              font-size: 1.3rem;
+          }
+
+          .download-section {
+              text-align: center;
+              padding: 40px;
+              background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+              color: white;
+              border-radius: 20px;
+              margin: 40px 0;
+          }
+
+          .app-store-badge {
+              display: inline-block;
+              margin: 20px 10px;
+              padding: 12px 24px;
+              background: #000;
+              color: white;
+              text-decoration: none;
+              border-radius: 10px;
+              font-weight: bold;
+              transition: transform 0.3s ease;
+          }
+
+          .app-store-badge:hover {
+              transform: scale(1.05);
+          }
+
+          footer {
+              text-align: center;
+              padding: 40px;
+              color: white;
+              opacity: 0.8;
+          }
+
+          .contact-info {
+              background: #f8f9fa;
+              padding: 30px;
+              border-radius: 15px;
+              margin: 30px 0;
+          }
+
+          @media (max-width: 768px) {
+              h1 {
+                  font-size: 2rem;
+              }
+
+              .features {
+                  grid-template-columns: 1fr;
+              }
+
+              .main-content {
+                  padding: 20px;
+              }
+          }
+      </style>
+  </head>
+  <body>
+      <div class="container">
+          <header>
+              <div class="app-icon">💰</div>
+              <h1>換匯與記帳</h1>
+              <p class="subtitle">您的專業旅行理財助手</p>
+          </header>
+
+          <div class="main-content">
+              <h2 style="text-align: center; color: #667eea; margin-bottom: 30px;">讓旅行理財變得簡單</h2>
+
+              <p style="text-align: center; font-size: 1.1rem; margin-bottom: 40px; color: #666;">
+                  專為旅行者設計的智慧型換匯記帳應用，結合即時匯率查詢與完整的旅行預算管理功能，讓您的每一趟旅程都能精準掌控花費。
+              </p>
+
+              <div class="features">
+                  <div class="feature">
+                      <div class="feature-icon">📊</div>
+                      <h3>即時匯率查詢</h3>
+                      <p>整合多家銀行匯率資訊，提供最準確的即時匯率，支援多種主要貨幣轉換。</p>
+                  </div>
+
+                  <div class="feature">
+                      <div class="feature-icon">✈️</div>
+                      <h3>旅行預算管理</h3>
+                      <p>為每趟旅程設定專屬預算，智慧追蹤支出狀況，讓您隨時掌握旅行花費。</p>
+                  </div>
+
+                  <div class="feature">
+                      <div class="feature-icon">📱</div>
+                      <h3>智慧記帳功能</h3>
+                      <p>簡潔直觀的記帳介面，支援拍照記錄，讓每筆花費都有完整的紀錄。</p>
+                  </div>
+
+                  <div class="feature">
+                      <div class="feature-icon">📈</div>
+                      <h3>數據分析報表</h3>
+                      <p>詳細的消費分析與分類統計，支援 Excel 匯出，讓理財更有條理。</p>
+                  </div>
+
+                  <div class="feature">
+                      <div class="feature-icon">🔒</div>
+                      <h3>資料安全保護</h3>
+                      <p>本地儲存設計，保護您的隱私安全，資料完全由您掌控。</p>
+                  </div>
+
+                  <div class="feature">
+                      <div class="feature-icon">🌐</div>
+                      <h3>多語言支援</h3>
+                      <p>支援繁體中文介面，為台灣使用者量身打造的在地化設計。</p>
+                  </div>
+              </div>
+
+              <div class="contact-info">
+                  <h3 style="color: #667eea; margin-bottom: 20px; text-align: center;">應用資訊</h3>
+                  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                      <div>
+                          <strong>版本：</strong> 1.0.0<br>
+                          <strong>分類：</strong> 財務管理<br>
+                          <strong>語言：</strong> 繁體中文
+                      </div>
+                      <div>
+                          <strong>平台：</strong> iOS<br>
+                          <strong>開發者：</strong> CHAOWEIHUA<br>
+                          <strong>更新日期：</strong> 2025年1月
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <div class="download-section">
+              <h2>立即下載體驗</h2>
+              <p>開始您的智慧理財旅程</p>
+              <a href="#" class="app-store-badge">📱 App Store 下載</a>
+          </div>
+
+          <footer>
+              <p>&copy; 2025 換匯與記帳. 版權所有.</p>
+              <p>讓每一趟旅程都更精彩 ✨</p>
+          </footer>
+      </div>
+  </body>
+  </html>
+
+  2. support.html（支持頁面）
+
+  <!DOCTYPE html>
+  <html lang="zh-TW">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>技術支援 - 換匯與記帳</title>
+      <style>
+          * {
+              margin: 0;
+              padding: 0;
+              box-sizing: border-box;
+          }
+
+          body {
+              font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+              line-height: 1.6;
+              color: #333;
+              background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+              min-height: 100vh;
+          }
+
+          .container {
+              max-width: 800px;
+              margin: 0 auto;
+              padding: 20px;
+          }
+
+          header {
+              text-align: center;
+              color: white;
+              padding: 40px 0;
+          }
+
+          h1 {
+              font-size: 2.5rem;
+              margin-bottom: 10px;
+              text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+          }
+
+          .subtitle {
+              font-size: 1.1rem;
+              opacity: 0.9;
+          }
+
+          .main-content {
+              background: white;
+              border-radius: 20px;
+              padding: 40px;
+              margin: 20px 0;
+              box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+          }
+
+          .support-section {
+              margin: 40px 0;
+              padding: 30px;
+              background: #f8f9fa;
+              border-radius: 15px;
+              border-left: 5px solid #667eea;
+          }
+
+          .support-section h2 {
+              color: #667eea;
+              margin-bottom: 20px;
+              font-size: 1.5rem;
+          }
+
+          .contact-item {
+              display: flex;
+              align-items: center;
+              margin: 15px 0;
+              padding: 15px;
+              background: white;
+              border-radius: 10px;
+              box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+          }
+
+          .contact-icon {
+              font-size: 24px;
+              margin-right: 15px;
+              width: 40px;
+              text-align: center;
+          }
+
+          .faq-item {
+              margin: 20px 0;
+              padding: 20px;
+              background: white;
+              border-radius: 10px;
+              box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+          }
+
+          .faq-question {
+              font-weight: bold;
+              color: #667eea;
+              margin-bottom: 10px;
+              font-size: 1.1rem;
+          }
+
+          .faq-answer {
+              color: #666;
+              line-height: 1.6;
+          }
+
+          .privacy-section {
+              background: #e8f4fd;
+              border: 1px solid #bee5eb;
+              border-radius: 15px;
+              padding: 30px;
+              margin: 30px 0;
+          }
+
+          .privacy-section h3 {
+              color: #0c5460;
+              margin-bottom: 15px;
+          }
+
+          .back-link {
+              text-align: center;
+              margin: 30px 0;
+          }
+
+          .back-link a {
+              color: white;
+              text-decoration: none;
+              padding: 12px 24px;
+              background: rgba(255,255,255,0.2);
+              border-radius: 25px;
+              transition: background 0.3s ease;
+          }
+
+          .back-link a:hover {
+              background: rgba(255,255,255,0.3);
+          }
+
+          @media (max-width: 768px) {
+              .main-content {
+                  padding: 20px;
+              }
+
+              .support-section {
+                  padding: 20px;
+              }
+          }
+      </style>
+  </head>
+  <body>
+      <div class="container">
+          <header>
+              <h1>💼 技術支援</h1>
+              <p class="subtitle">我們隨時為您提供協助</p>
+          </header>
+
+          <div class="main-content">
+              <div class="support-section">
+                  <h2>📞 聯絡我們</h2>
+                  <div class="contact-item">
+                      <span class="contact-icon">📧</span>
+                      <div>
+                          <strong>電子郵件支援</strong><br>
+                          <a href="mailto:khjhs60199@gmail.com">khjhs60199@gmail.com</a>
+                      </div>
+                  </div>
+
+                  <div class="contact-item">
+                      <span class="contact-icon">🌐</span>
+                      <div>
+                          <strong>官方網站</strong><br>
+                          <a href="https://khjhs.github.io/app-ads/">https://khjhs.github.io/app-ads/</a>
+                      </div>
+                  </div>
+
+                  <div class="contact-item">
+                      <span class="contact-icon">📱</span>
+                      <div>
+                          <strong>應用版本</strong><br>
+                          iOS 1.0.0 (最新版本)
+                      </div>
+                  </div>
+              </div>
+
+              <div class="support-section">
+                  <h2>❓ 常見問題</h2>
+
+                  <div class="faq-item">
+                      <div class="faq-question">Q: 如何設定我的第一個旅行預算？</div>
+                      <div class="faq-answer">A: 在「我的旅行花費預算」頁面點選「新增旅行」按鈕，輸入旅行名稱、預算金額和選擇基準貨幣即可開始使用。</div>
+                  </div>
+
+                  <div class="faq-item">
+                      <div class="faq-question">Q: 匯率資料多久更新一次？</div>
+                      <div class="faq-answer">A:
+  我們的匯率資料來源於台灣銀行等多家金融機構，會即時更新以確保準確性。建議在進行換匯前重新查詢最新匯率。</div>
+                  </div>
+
+                  <div class="faq-item">
+                      <div class="faq-question">Q: 如何備份我的記帳資料？</div>
+                      <div class="faq-answer">A: 您可以在「設定」頁面使用「匯出 Excel 資料」功能，將所有記帳資料匯出為 CSV 檔案或包含照片的 ZIP
+  檔案進行備份。</div>
+                  </div>
+
+                  <div class="faq-item">
+                      <div class="faq-question">Q: 應用程式支援哪些貨幣？</div>
+                      <div class="faq-answer">A: 目前支援 TWD、USD、JPY、EUR、GBP、HKD、SGD、AUD、CAD、CNY、IDR 等主要國際貨幣。</div>
+                  </div>
+
+                  <div class="faq-item">
+                      <div class="faq-question">Q: 如果發現問題或有功能建議怎麼辦？</div>
+                      <div class="faq-answer">A: 請透過上方的電子郵件聯絡我們，我們會盡快回覆並持續改善應用程式的功能。</div>
+                  </div>
+              </div>
+
+              <div class="privacy-section">
+                  <h3>🔒 隱私權政策重點</h3>
+                  <ul style="margin-left: 20px; color: #0c5460;">
+                      <li>所有財務資料均儲存在您的設備本地，不會上傳至伺服器</li>
+                      <li>我們不會收集或分享您的個人財務資訊</li>
+                      <li>匯率查詢僅用於提供即時資訊服務</li>
+                      <li>照片資料完全由您掌控，可隨時刪除</li>
+                      <li>廣告內容由第三方提供，遵循相關隱私規範</li>
+                  </ul>
+              </div>
+
+              <div class="support-section">
+                  <h2>🛠️ 技術需求</h2>
+                  <p><strong>系統要求：</strong></p>
+                  <ul style="margin-left: 20px; margin-top: 10px;">
+                      <li>iOS 14.0 或更新版本</li>
+                      <li>iPhone、iPad 相容</li>
+                      <li>約 50MB 儲存空間</li>
+                      <li>網路連線（用於匯率查詢）</li>
+                  </ul>
+              </div>
+
+              <div style="text-align: center; margin: 40px 0; padding: 30px; background: #f8f9fa; border-radius: 15px;">
+                  <h3 style="color: #667eea; margin-bottom: 15px;">需要更多協助？</h3>
+                  <p style="margin-bottom: 20px;">我們的開發團隊致力於提供最佳的使用體驗</p>
+                  <a href="mailto:khjhs60199@gmail.com" style="display: inline-block; padding: 12px 30px; background: #667eea; color: white; 
+  text-decoration: none; border-radius: 25px; font-weight: bold;">📧 立即聯絡我們</a>
+              </div>
+          </div>
+
+          <div class="back-link">
+              <a href="index.html">← 返回主頁</a>
+          </div>
+
+          <footer style="text-align: center; padding: 40px; color: white; opacity: 0.8;">
+              <p>&copy; 2025 換匯與記帳 技術支援團隊</p>
+          </footer>
+      </div>
+  </body>
+  </html>
